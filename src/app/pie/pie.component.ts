@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pie.component.css'],
 })
 export class PieComponent implements OnInit {
-  public autor: string = 'Sergio Riquelme';
+  public autor: string = 'Alberto Basalo';
   // public year: string = '2021';
   // public year: number = 2021;
   public year: Date = new Date();
