@@ -3,6 +3,8 @@
   <form>
     <input [(ngModel)]="loTecleado"
            name="loTecleado"
+           [disabled]="inputDeshabilitado"
+           [class]="inputClass"
            [type]="inputType"
            (input)="onInput()">
     <button type="button"
