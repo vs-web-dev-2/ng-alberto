@@ -1,3 +1,7 @@
+// TS: mdoule = file
+// import { something } from 'path/to/file'
+// export something
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,3 +17,8 @@ import { TecleoModule } from './tecleo/tecleo.module';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+// NG: module = class decorated with @NgModule()
+// declarations: [array of components]
+// exports: [array of exported components]
+// imports: [array of imported modules]
