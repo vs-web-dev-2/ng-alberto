@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { url } from 'inspector';
+import { FrankfurterService } from './frankfurter.service';
 
 @Component({
   selector: 'app-divisas',
@@ -12,15 +13,12 @@ export class DivisasComponent implements OnInit {
   public cotizaciones: any[] = [];
   public cargado = false;
 
-  constructor(http: HttpClient) {
-    const url = "https://api.frankfurter.app/latest";
-    http.get(url).subscribe(
+  constructor( frank : FrankfurterService) {
+    frank.obtenerCotizaciones$().subscribe(
       {
         next: (body: any) => {
           this.fecha = new Date(body.date);
-
           const rates: any = body.rates;
-
           Object.keys(rates).forEach((key) => {
             this.cotizaciones.push({
               divisa: key,
