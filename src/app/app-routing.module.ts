@@ -18,6 +18,10 @@ const routes: Routes = [
     component: NotFoundComponent,
   },
   {
+    path: 'divisas',
+    loadChildren: () => import('./divisas/divisas.module').then(m => m.DivisasModule)
+  },
+  {
     path: '**',
     redirectTo: 'not-found',
   },
