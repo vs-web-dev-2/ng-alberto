@@ -6,13 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class FrankfurterService {
   private url = "https://api.frankfurter.app/latest";
-  //private http: HttpClient;
 
-  constructor(private http: HttpClient) {
-    //this.http = http;
-  }
+  constructor(private http: HttpClient) {  }
 
   public obtenerCotizaciones$() {
+    console.log("llamada establecidad a " + this.url);
     return this.http.get(this.url);
   }
 }

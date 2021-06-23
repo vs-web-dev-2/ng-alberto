@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { url } from 'inspector';
 import { FrankfurterService } from './frankfurter.service';
 
 @Component({
@@ -13,8 +12,10 @@ export class DivisasComponent implements OnInit {
   public cotizaciones: any[] = [];
   public cargado = false;
 
-  constructor( frank : FrankfurterService) {
-    frank.obtenerCotizaciones$().subscribe(
+  constructor(private frank : FrankfurterService) {  }
+
+  ngOnInit(): void {
+    this.frank.obtenerCotizaciones$().subscribe(
       {
         next: (body: any) => {
           this.fecha = new Date(body.date);
@@ -30,10 +31,7 @@ export class DivisasComponent implements OnInit {
         }
       }
     );
-    console.log("llamada establecidad a " + url);
-  }
 
-  ngOnInit(): void {
   }
 
 }

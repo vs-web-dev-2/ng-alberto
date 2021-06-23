@@ -2,6 +2,7 @@
 // import { something } from 'path/to/file'
 // export something
 
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +13,7 @@ import { TecleoModule } from './tecleo/tecleo.module';
 
 @NgModule({
   declarations: [AppComponent, PieComponent, CabeceraComponent],
-  imports: [BrowserModule, AppRoutingModule, TecleoModule],
+  imports: [BrowserModule, AppRoutingModule, TecleoModule,    HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

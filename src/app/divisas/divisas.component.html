@@ -3,11 +3,6 @@
 </header>
 <main *ngIf="cargado===true">
   <h2>Fecha: <time> {{ fecha | date:'dd/MM/yy' }} </time> </h2>
-  <ul>
-    <li *ngFor="let cotizacion of cotizaciones">
-      <span class="divisa">{{ cotizacion.divisa }}: </span>
-      <span class="contravalor"> {{ cotizacion.contravalor }} €</span>
-    </li>
-  </ul>
+  <app-cotizaciones [cotizaciones]="cotizaciones"></app-cotizaciones>
 </main>
 <div *ngIf="cargado===false"> 💫 Cargando datos, espere por favor.... ⌛ </div>
